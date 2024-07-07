@@ -1,0 +1,17 @@
+<div class='container-fluid'>
+    <div class="col-12 d-flex justify-content-center">
+        <div class="col-4 todo-block">
+            <h3>Todo List</h3>
+            <input type="text" class="todo-input" placeholder="Enter a new task" [(ngModel)]="listValue">
+            <button class="add-button" (click)="addTask()">Add</button>
+            <ul class="todo-list">
+                <li class="todo-item" *ngFor="let todo of todoList; let i=index;">
+                    <input type="checkbox" class="todo-checkbox" [(ngModel)]="todo.value">
+                    <span class="todo-text">{{ todo.content }}</span>
+                    <button class="delete-button" (click)="deleteTask(i)">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
